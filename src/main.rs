@@ -97,7 +97,7 @@ async fn main() {
         for new_file in new_files {
             println!("删除新增文件: {}", new_file);
             fs::remove_file(&new_file).expect("无法删除文件");
-            let url = format!("http://www.pushplus.plus/send?token=61fae126cd0b4266bd052a1db969d687&title=出现恶意新文件{}&content=已对恶意新文件{}执行删除指令.&template=html",&new_file,&new_file);
+            let url = format!("http://www.pushplus.plus/send?token=pushplus的key&title=出现恶意新文件{}&content=已对恶意新文件{}执行删除指令.&template=html",&new_file,&new_file);
             let text=req.get(url).send().await.unwrap().text();
             // println!("{}",text.await.unwrap());
             if text.await.unwrap().contains("请求成功"){
